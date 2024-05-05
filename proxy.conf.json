@@ -1,0 +1,10 @@
+{
+
+    "/api_dev": {
+      "target": "https://dev.myhector.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+}
+  
