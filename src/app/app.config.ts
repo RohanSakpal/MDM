@@ -7,6 +7,8 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpAuthInterceptor } from './Auth/http-interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService } from './services/user.service';
+import { MasterService } from './services/master.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(),provideClientHydration(),
@@ -15,6 +17,7 @@ export const appConfig: ApplicationConfig = {
       useClass: HttpAuthInterceptor,
       multi: true,
     },
-    importProvidersFrom([HttpClientModule,BrowserAnimationsModule])
+    importProvidersFrom([HttpClientModule,BrowserAnimationsModule]),
+    UserService,MasterService
   ]
 };
